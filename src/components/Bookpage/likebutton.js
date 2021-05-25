@@ -13,15 +13,14 @@ class LikeButton extends Component {
         }
         const url = 'https://asia-south1-bookify-5fa22.cloudfunctions.net/api/reviews/' + this.props.reviewId + '/like';
 
-        console.log(this.props.userHandle);
-        console.log(url);
+        
 
         function like () {
 
             axios
             .get( url, body)
             .then( (res) =>{
-                console.log(res);
+               
             })
             .catch((error)=>{
             alert(error)

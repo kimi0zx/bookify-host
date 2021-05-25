@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState} from 'react';
 import {Link}from 'react-router-dom';
 import {useSelector} from 'react-redux';
 
@@ -12,6 +12,8 @@ function Navbar() {
     const isLogged = useSelector(state => state.isLogged);
     const isMenu = useSelector( state => state.isMenu );
     const userState = useSelector( state => state.userState); 
+
+    const [search, setSearch] = useState('');
     
     
 
@@ -19,10 +21,13 @@ function Navbar() {
         <div className="navbar">
            <header>
             <div className="search">
-                <input type="text" id="" placeholder="search Books..."/>
+                <input type="text" placeholder="search Books..."  value={search} onChange={(e) => {setSearch(e.target.value)}} />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-                <button><i className="fas fa-search"></i></button>
+                <Link to='/search'>
+                <button onClick = {() =>{localStorage.setItem("Search", search)} }><i className="fas fa-search"></i></button>
+                </Link>
             </div>
+                
                
             <div className="home">
                <Link to='/'>Bookify</Link>
@@ -34,7 +39,7 @@ function Navbar() {
                 <div className="user">  
                     <MenuButton />
                 </div>
-               :
+               : 
                <div className="user">
                     <button> <Link to='/login'>Login</Link></button>
                     <button> <Link to='/signup'>SignUp</Link></button>

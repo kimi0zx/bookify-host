@@ -1,0 +1,39 @@
+.search {
+    display: grid;
+    
+}
+
+.search .bookcard {
+   
+    margin: 5px 20%;
+    border: black 1px solid;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr ;
+    grid-template-rows: 1fr 2fr;
+    /* gap: 0px 0px; */
+    grid-template-areas:
+      "cover Book-Name Genre Rating "
+      "cover Description Description Description";
+  }
+  .cover {
+       
+        margin: 10px 20px;
+        grid-area: cover; 
+    }
+  .Book-Name { 
+        padding: 5px;
+        grid-area: Book-Name; 
+    }
+  .Genre { 
+        padding: 5px;
+        grid-area: Genre; 
+    }
+  .Description { 
+        padding: 5px;
+        grid-area: Description; 
+    }
+  .Rating {
+    padding: 5px;
+    grid-area: Rating;
+}

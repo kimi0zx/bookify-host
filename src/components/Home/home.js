@@ -23,6 +23,7 @@ function Home() {
   }
 
   const setBookid = (passId) => {
+      localStorage.setItem("bookId", passId);
       store.dispatch({
       type: "SET_BOOKID" ,
       payload: passId ,
@@ -39,7 +40,7 @@ function Home() {
               <div className="cover"><img src={books.coverImage} alt="bookcover" width="100px"/></div>
               <div className="Book-Name">Book-Name: {books.title}</div>
               <div className="Genre">Genre: {books.genre}</div>
-              <div className="Rating">Rating: {books.ratings}</div>
+              <div className="Rating">Rating: {books.ratings ? Math.round((books.ratings + Number.EPSILON) * 100) / 100 : "No Ratings yet"}</div>
               <div className="Description"> {books.description} </div>
           </div>
           </Link>

@@ -57,11 +57,11 @@ function Signup() {
               </div>
               
               <div className="passin">
-                <input type="text" placeholder="password" value={pass} onChange={(e) => {setpass(e.target.value)}}/> 
+                <input type="password" placeholder="password" value={pass} onChange={(e) => {setpass(e.target.value)}}/> 
               </div>
               
               <div className="confpassin">
-                <input type="text" placeholder="Confirm Password" value={confpass} onChange={(e) => {setconfpass(e.target.value)}}/>
+                <input type="password" placeholder="Confirm Password" value={confpass} onChange={(e) => {setconfpass(e.target.value)}}/>
               </div>
               
               <div className="handlein">

@@ -3,6 +3,8 @@ import { BrowserRouter as Router , Switch , Route} from 'react-router-dom';
 import jwtDecode from "jwt-decode";
 import axios from 'axios';
 
+import './App.css';
+
 // Pages
 import Navbar from'./components/Navbar/navbar';
 import Home from './components/Home/home';
@@ -10,7 +12,8 @@ import Login from './components/Login/login';
 import Signup from './components/Signup/signup';
 import Footer from './components/Footer/footer';
 import Bookpage from './components/Bookpage/bookpage';
-import Addbook from './components/Addbook/addbook';
+import Bookadd from './components/Addbook/Bookadd';
+import SearchResult from './components/SearchResult/searchresult'
 
 // Redux
 import {useSelector} from 'react-redux';
@@ -60,7 +63,9 @@ function App() {
               <Route path="/login" component={isLogged ? Home : Login} />
               <Route path="/signup" component={isLogged ? Home : Signup}/>
               <Route path="/book" component ={isLogged ? Bookpage : Login} />
-              <Route path="/addbook" component ={isLogged ? Addbook : Home} />
+              <Route path="/addbook" component ={isLogged ? Bookadd : Home} />
+              <Route path="/search" component = {SearchResult} />
+              
             </Switch>
         <Footer />    
   </Router>

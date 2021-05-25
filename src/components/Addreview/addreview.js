@@ -3,6 +3,7 @@ import React ,{ useState} from 'react';
 import {useSelector} from 'react-redux';
 import store from '../../redux/store';
 import './addreview.css';
+import {Link}from 'react-router-dom';
 
 function AddReviews() {
 
@@ -22,19 +23,23 @@ function AddReviews() {
             userImage  : userState.credentials.imageUrl , 
         }
        
-      
+        const setBookid = (passId) => {
+            store.dispatch({
+            type: "SET_BOOKID" ,
+            payload: passId ,
+          });
+        }
 
         const addrev = () => {
             axios
             .post(url , send)
             .then((res) => {
-                console.log(res)
-                window.location.reload();
-                store.dispatch({
-                    type:  "SET_BOOKID" ,
-                    payload : bookid,
-                })
+                console.log(res);
+                setbody(" ");
+                store.dispatch({ type : 'IS_ADD'})
                 
+
+
               })
               .catch((error)=>{
                 alert(error)
@@ -42,13 +47,16 @@ function AddReviews() {
             
             };
 
+        
+
+        
 
         return (
             <div className="addreview">
                  <textarea  type="text" placeholder="type here..." value={body} onChange={(e) => {setbody(e.target.value)}} />
-                
+                 {/* <Link to='/book'  onClick = {() => {setBookid(bookid)} } > */}
                  <button className="submit" onClick= {()=>{addrev()}} >Review!!</button>
-
+                    {/* </Link> */}
                  <button className="close" onClick = {() => store.dispatch({ type : 'IS_ADD'})}><i class="far fa-window-close"></i></button>
             </div>
         

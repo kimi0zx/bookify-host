@@ -1,0 +1,55 @@
+.signup{
+    display:grid;
+    margin: 0px 25% 0px 25%;
+    grid-template-columns: 1fr;
+    
+    
+}
+
+.signup .form {
+    width: 400px;
+    border: black 1px solid;
+    border-radius: 10px;
+    padding : 10px;
+    margin : 100px 0% 100px 20%;
+    display: grid;
+    grid-template-columns: 1fr ;
+    justify-content: end;
+    background-color: rgb(221, 218, 218);
+}
+
+.signup .form input{
+    text-align: center;
+    margin: 30px;
+    font-size: 30px;
+}
+.signup .form textarea{
+    text-align: center;
+    margin: 30px;
+    font-size: 30px;
+}
+
+
+
+.signup .form button{
+    font-size: 30px;
+}
+
+.signup h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.signup h3{
+    text-align: right;
+}
+
+.signup .buttonarea{
+    text-align: center;
+    margin: 10px;
+    padding: 10px; 
+}
+
+.signup button{
+    padding: 10px;
+}

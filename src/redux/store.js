@@ -5,6 +5,7 @@ import menuReducer from './reducers/isMenu';
 import userState from './reducers/userState';
 import bookid from './reducers/bookid';
 import isAddrev from './reducers/isAddrev'
+import addIamge from './reducers/addIamge'
 
 
 const initialState = {}; 
@@ -16,7 +17,8 @@ const reducers = combineReducers({
     isMenu : menuReducer,
 	userState : userState , 
 	bookid : bookid ,
-	isAddrev : isAddrev
+	isAddrev : isAddrev,
+	addImage : addIamge,
 });
 
 

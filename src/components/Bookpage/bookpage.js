@@ -16,11 +16,12 @@ const Bookpage = () => {
     const [books , setItems] = useState([]);
 
     const isAddrev = useSelector(state => state.isAddrev);
+    const userState = useSelector(state => state.userState);
 
     //FETCH getBook
-    const bookid = useSelector(state => state.bookid.state);
+    const bookid = localStorage.getItem("bookId");
 
-    const userState = useSelector(state => state.userState);
+    
     
     const url = 'https://asia-south1-bookify-5fa22.cloudfunctions.net/api/books/' + bookid
     
@@ -35,14 +36,7 @@ const Bookpage = () => {
     }
     //FETCH getBook
 
-    console.log(books);
-    
- 
     const bookrev = (books.reviews) ? <Reviews reviewprop = {books.reviews} userStateprop = {userState}/> : null ;
-
-   
-
-    
 
     return(
         <div className="view">
@@ -53,7 +47,7 @@ const Bookpage = () => {
               <div className="Rating">Rating: {Math.round((books.ratings + Number.EPSILON) * 100) / 100}</div>
               <div className="author">Author: {books.author}</div>
               <div className="language">Language: {books.language}</div>
-              <div className="link">Link: {books.link}</div>
+              <div className="link">Link: <a href= {books.link} target="_blank">{books.link}</a></div>
               <div className="Description"> {books.description} </div>
             </div>
             <div className="Mid">
