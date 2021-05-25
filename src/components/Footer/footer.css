@@ -1,0 +1,10 @@
+footer {
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: grey;
+    justify-items: center;
+    align-items: center;
+
+}
+

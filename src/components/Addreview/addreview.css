@@ -1,0 +1,34 @@
+.addreview{
+    border: black 1px solid;
+    border-radius: 10px;
+    background: rgb(202, 198, 198);
+    padding: 10px;
+    position: absolute;
+    /* margin: -25% 25%; */
+    width: 50%;
+    height: 50%;
+    display: flex;
+
+}
+
+.addreview button {
+    
+    padding: 5px;
+    font-size: 20px;
+} 
+
+.addreview .close {
+    width: 50px;
+    height: 50px;
+    margin: 0 0 0 auto;
+}
+.addreview textarea {
+    width: 80%;
+    margin: 30px;
+}
+
+.addreview .submit {
+    width: 100px;
+    height: 50px;
+    margin: auto 0 0 0 ;
+}
